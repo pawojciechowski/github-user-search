@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://api.github.com/" crossorigin>
+
+    <meta name="theme-color" content="#000" />
+    <meta
+      name="description"
+      content="Application that allows to search Github users and see short summary of their profiles"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Github user search</title>
+    <style>
+      html {
+        font-size: 14px;
+        overflow-x: hidden;
+      }
+      html,
+      body {
+        min-height: 100%;
+      }
+      body {
+        background: #E5E5E5;
+        color: #828282;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script>
+      WebFontConfig = {
+        google: {
+          families: ['Roboto:400,500,700:latin-ext&display=swap']
+        }
+      };
+
+      (function(d) {
+         var wf = d.createElement('script'), s = d.scripts[0];
+         wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+         wf.async = true;
+         s.parentNode.insertBefore(wf, s);
+      })(document);
+   </script>
+  </body>
+</html>
