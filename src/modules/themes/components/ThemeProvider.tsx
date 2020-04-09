@@ -2,6 +2,7 @@ import React, { PropsWithChildren } from 'react';
 import { ThemeProvider as StyledComponentsThemeProvider, createGlobalStyle } from 'styled-components';
 import { Theme, ThemeName } from '../types';
 import { themes } from '../themes';
+import { baseFontCSS } from '../styles';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -10,11 +11,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: ${({ theme }: { theme: Theme}) => theme.typography.base.fontFamily};
-    font-size: ${({ theme }: { theme: Theme}) => theme.typography.base.fontSize};
-    line-height: ${({ theme }: { theme: Theme}) => theme.typography.base.lineHeight};
-    letter-spacing: ${({ theme }: { theme: Theme}) => theme.typography.base.letterSpacing};
-    color: ${({ theme }: { theme: Theme}) => theme.typography.base.color};
+    ${baseFontCSS}
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;

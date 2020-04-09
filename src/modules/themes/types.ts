@@ -6,6 +6,8 @@ export type FontWeight = string;
 export type FontFamily = string;
 export type LineHeight = string;
 export type LetterSpacing = string;
+export type BoxShadow = string;
+export type CSSUrl = string;
 
 interface FontSettings {
   fontFamily?: FontFamily,
@@ -21,7 +23,8 @@ interface InputStyles {
     text: FontSettings
   },
   background: Color,
-  text: FontSettings
+  text: FontSettings,
+  icon?: CSSUrl
 }
 
 interface ButtonStyles {
@@ -30,16 +33,18 @@ interface ButtonStyles {
 }
 
 interface TypographySettings {
-  base: FontSettings,
+  base: Required<FontSettings>,
   title: FontSettings
 }
 
 export interface Theme {
+  foreground: Color,
   background: Color,
   input: InputStyles,
-  button: ButtonStyles,
+  button: ButtonStyles & { disabled?: ButtonStyles},
   spacer: number,
   typography: TypographySettings,
+  containerShadow: BoxShadow
 }
 
 export type ThemeName = typeof themeNames[number];

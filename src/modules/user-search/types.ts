@@ -5,11 +5,11 @@ export interface GithubUserResponse {
   avatar_url: string
 }
 
-export interface GithubReposResponseRepo {
+export interface GithubReposResponseRepository {
   id: number,
   name: string,
   html_url: string,
   stargazers_count: number
 }
 
-export interface GithubReposResponse extends Array<GithubReposResponseRepo> {}
+export interface GithubReposResponse extends Array<GithubReposResponseRepository> {}

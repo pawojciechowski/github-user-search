@@ -1,10 +1,12 @@
 import { Theme, ThemeName } from './types';
 import colors from './colors';
+import searchIcon from 'assets/icons/search-icon.svg';
 
 export const themeNames = ['default'] as const;
 
 export const themes: {[key in ThemeName]: Theme} = {
   default: {
+    foreground: colors.white,
     background: colors.gray2,
     input: {
       placeholder: {
@@ -15,13 +17,20 @@ export const themes: {[key in ThemeName]: Theme} = {
       text: {
         color: colors.gray5
       },
-      background: colors.gray1
+      background: colors.gray1,
+      icon: searchIcon
     },
     button: {
       text: {
         color: colors.white
       },
-      background: colors.blue1
+      background: colors.blue1,
+      disabled: {
+        text: {
+          color: colors.gray4
+        },
+        background: colors.gray1,
+      }
     },
     spacer: 16,
     typography: {
@@ -29,6 +38,7 @@ export const themes: {[key in ThemeName]: Theme} = {
         fontFamily: 'Roboto, sans-serif',
         fontSize: '14px',
         lineHeight: '19px',
+        fontWeight: 'normal',
         letterSpacing: '0.4px',
         color: colors.gray4
       },
@@ -39,7 +49,8 @@ export const themes: {[key in ThemeName]: Theme} = {
         letterSpacing: '0.15px',
         color: colors.black
       }
-    }
+    },
+    containerShadow: '0px 2px 7px rgba(0, 0, 0, 0.1)'
   }
 };
 

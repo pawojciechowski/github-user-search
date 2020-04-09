@@ -20,10 +20,11 @@ export const GithubUser = types.model("GithubUser", {
 export const GithubUserStore = types.model("GithubUserStore", {
   user: types.maybeNull(GithubUser),
   state: types.optional(types.union(
+    types.literal('initial'),
     types.literal('pending'),
     types.literal('success'),
     types.literal('error'),
-  ), 'pending'),
+  ), 'initial'),
   error: types.maybe(types.string)
 }).actions((self) => ({
   fetchUserWithRepos: flow(function* fetchUserWithRepos(username) {
@@ -67,6 +68,9 @@ export const GithubUserStore = types.model("GithubUserStore", {
         repos: [...snapshot.user.repos].sort((repo1, repo2) => repo2.stars - repo1.stars).slice(0, 3)
       });
     }
+  },
+  get isLoading() {
+    return self.state === 'pending';
   }
 }));
 
