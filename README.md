@@ -11,11 +11,12 @@ I have used [mobx-state-tree](https://mobx-state-tree.js.org/) as state manageme
 
 - [x] Use Typescript
 - [x] Use linter and code formatter (ESLint)
-- [ ] Connect to Github REST API v3
+- [x] Connect to Github REST API v3
 - [ ] Implement designs
 - [ ] Write tests
 
 ## Additional features
 
 - [x] Add theming possibility
+- [x] Add state management library
 - [ ] Add CI & CD and deploy it to the server
