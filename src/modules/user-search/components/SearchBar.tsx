@@ -11,21 +11,23 @@ const SearchBarContainer = styled.div`
 
   ${Input} {
     flex-grow: 1;
-    margin-right: ${({ theme }: { theme: Theme}) => `${theme.spacer}px`};
+    margin-right: ${({ theme }: { theme: Theme }) => `${theme.spacer}px`};
   }
 `;
 
 interface SearchBarProps {
-  user: IGithubUserStore
+  userStore: IGithubUserStore;
 }
 
-export function SearchBar({ user }: SearchBarProps) {
+export function SearchBar({ userStore }: SearchBarProps) {
   return (
     <SearchBarContainer>
-      <Input placeholder="Search for users"/>
-      <Button disabled={user.isLoading} onClick={() => user.fetchUserWithRepos('pawojciechowski')}>Search</Button>
+      <Input placeholder="Search for users" />
+      <Button disabled={userStore.isLoading} onClick={() => userStore.fetchUserWithRepos('pawojciechowski')}>
+        Search
+      </Button>
     </SearchBarContainer>
-  )
+  );
 }
 
-export default inject('user')(observer(SearchBar)) as any;
+export default inject('userStore')(observer(SearchBar)) as any;

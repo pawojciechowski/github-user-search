@@ -17,5 +17,5 @@ export default {
   gray2,
   gray3,
   gray4,
-  gray5
+  gray5,
 };

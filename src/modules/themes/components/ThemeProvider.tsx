@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
-    background: ${({ theme }: { theme: Theme}) => theme.background};
+    background: ${({ theme }: { theme: Theme }) => theme.background};
   }
 
   #root {

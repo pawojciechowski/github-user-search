@@ -1,13 +1,13 @@
 type URL = string;
 
 export interface IAPIService {
-  get<T>(url: URL, params?: {[key: string]: string}): Promise<T>;
+  get<T>(url: URL, params?: { [key: string]: string }): Promise<T>;
 }
 
 interface APIServiceOptions {
   headers?: Headers;
-  mockResponse?: {[key: string]: any};
-  logRequests?: boolean
+  mockResponse?: { [key: string]: any };
+  logRequests?: boolean;
 }
 
 class APIServiceError extends Error {
@@ -16,12 +16,7 @@ class APIServiceError extends Error {
   response?: Response;
   error?: Error;
 
-  constructor(
-    url: string,
-    options: RequestInit,
-    response?: Response,
-    error?: Error,
-  ) {
+  constructor(url: string, options: RequestInit, response?: Response, error?: Error) {
     super(`
       API call for ${url} failed with
       "${response ? response.status : error?.message}"
@@ -37,7 +32,7 @@ class APIServiceError extends Error {
 class APIService implements IAPIService {
   private headers?: Headers;
   private baseUrl: string;
-  private mockResponse?: {[key: string]: any};
+  private mockResponse?: { [key: string]: any };
   private logRequests: boolean;
 
   constructor(baseUrl: string, options?: APIServiceOptions) {
@@ -47,13 +42,8 @@ class APIService implements IAPIService {
     this.logRequests = !!options?.logRequests;
   }
 
-  async get<T>(url: URL, params?: {[key: string]: string}): Promise<T> {
-    let qs = params
-      ? Object.keys(params).reduce(
-          (acc, next) => `${acc}${next}=${params[next]}&`,
-          '',
-        )
-      : '';
+  async get<T>(url: URL, params?: { [key: string]: string }): Promise<T> {
+    let qs = params ? Object.keys(params).reduce((acc, next) => `${acc}${next}=${params[next]}&`, '') : '';
     if (qs[qs.length - 1] === '&') qs = qs.slice(0, -1);
     qs = encodeURI(qs);
 
@@ -65,7 +55,7 @@ class APIService implements IAPIService {
   private async request<T>(url: string, options: RequestInit): Promise<T> {
     if (this.headers) {
       if (options.headers) {
-        options.headers = {...this.headers, ...options.headers};
+        options.headers = { ...this.headers, ...options.headers };
       } else {
         options.headers = this.headers;
       }

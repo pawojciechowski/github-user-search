@@ -4,33 +4,33 @@ import searchIcon from 'assets/icons/search-icon.svg';
 
 export const themeNames = ['default'] as const;
 
-export const themes: {[key in ThemeName]: Theme} = {
+export const themes: { [key in ThemeName]: Theme } = {
   default: {
     foreground: colors.white,
     background: colors.gray2,
     input: {
       placeholder: {
         text: {
-          color: colors.gray3
-        }
+          color: colors.gray3,
+        },
       },
       text: {
-        color: colors.gray5
+        color: colors.gray5,
       },
       background: colors.gray1,
-      icon: searchIcon
+      icon: searchIcon,
     },
     button: {
       text: {
-        color: colors.white
+        color: colors.white,
       },
       background: colors.blue1,
       disabled: {
         text: {
-          color: colors.gray4
+          color: colors.gray4,
         },
         background: colors.gray1,
-      }
+      },
     },
     spacer: 16,
     typography: {
@@ -40,17 +40,16 @@ export const themes: {[key in ThemeName]: Theme} = {
         lineHeight: '19px',
         fontWeight: 'normal',
         letterSpacing: '0.4px',
-        color: colors.gray4
+        color: colors.gray4,
       },
       title: {
         fontSize: '18px',
         fontWeight: '500',
         lineHeight: '24px',
         letterSpacing: '0.15px',
-        color: colors.black
-      }
+        color: colors.black,
+      },
     },
-    containerShadow: '0px 2px 7px rgba(0, 0, 0, 0.1)'
-  }
+    containerShadow: '0px 2px 7px rgba(0, 0, 0, 0.1)',
+  },
 };
-

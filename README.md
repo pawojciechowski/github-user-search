@@ -10,7 +10,8 @@ I have used [mobx-state-tree](https://mobx-state-tree.js.org/) as state manageme
 ## Requirements
 
 - [x] Use Typescript
-- [x] Use linter and code formatter (ESLint)
+- [x] Use linter (ESLint)
+- [x] Use code formatter (prettier)
 - [x] Connect to Github REST API v3
 - [ ] Implement designs
 - [ ] Write tests
