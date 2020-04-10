@@ -7,7 +7,8 @@ const Title = styled.h1`
   line-height: ${({ theme }: { theme: Theme }) => theme.typography.title.lineHeight};
   letter-spacing: ${({ theme }: { theme: Theme }) => theme.typography.title.letterSpacing};
   color: ${({ theme }: { theme: Theme }) => theme.typography.title.color};
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: ${({ theme }: { theme: Theme }) => `${theme.spacer}px`};
   padding: 0;
 `;
 

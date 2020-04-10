@@ -13,11 +13,12 @@ I have used [mobx-state-tree](https://mobx-state-tree.js.org/) as state manageme
 - [x] Use linter (ESLint)
 - [x] Use code formatter (prettier)
 - [x] Connect to Github REST API v3
-- [ ] Implement designs
+- [x] Implement designs
 - [ ] Write tests
 
 ## Additional features
 
 - [x] Add theming possibility
 - [x] Add state management library
+- [x] HMR for both components and state
 - [ ] Add CI & CD and deploy it to the server

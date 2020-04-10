@@ -8,6 +8,7 @@ export const themes: { [key in ThemeName]: Theme } = {
   default: {
     foreground: colors.white,
     background: colors.gray2,
+    secondary: colors.blue2,
     input: {
       placeholder: {
         text: {

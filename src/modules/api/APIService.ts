@@ -1,3 +1,5 @@
+import { APIServiceError } from './errors';
+
 type URL = string;
 
 export interface IAPIService {
@@ -8,25 +10,6 @@ interface APIServiceOptions {
   headers?: Headers;
   mockResponse?: { [key: string]: any };
   logRequests?: boolean;
-}
-
-class APIServiceError extends Error {
-  url: string;
-  options: RequestInit;
-  response?: Response;
-  error?: Error;
-
-  constructor(url: string, options: RequestInit, response?: Response, error?: Error) {
-    super(`
-      API call for ${url} failed with
-      "${response ? response.status : error?.message}"
-      with following options: ${JSON.stringify(options)}
-    `);
-    this.url = url;
-    this.options = options;
-    this.response = response;
-    this.error = error;
-  }
 }
 
 class APIService implements IAPIService {
@@ -66,14 +49,17 @@ class APIService implements IAPIService {
         const uri = `${this.baseUrl.replace(/\/$/, '')}${url}`;
         if (this.logRequests) console.log(`${options.method}: ${uri}`);
         const response: Response = await fetch(uri, options);
-
         if (response.ok) {
           return await response.json();
         } else {
           throw new APIServiceError(url, options, response);
         }
       } catch (err) {
-        throw new APIServiceError(url, options, undefined, err);
+        if (err instanceof APIServiceError) {
+          throw err;
+        } else {
+          throw new APIServiceError(url, options, undefined, err);
+        }
       }
     } else {
       return this.mockResponse as T;

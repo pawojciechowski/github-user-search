@@ -40,6 +40,7 @@ interface TypographySettings {
 export interface Theme {
   foreground: Color;
   background: Color;
+  secondary: Color;
   input: InputStyles;
   button: ButtonStyles & { disabled?: ButtonStyles };
   spacer: number;

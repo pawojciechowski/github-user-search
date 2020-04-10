@@ -1,6 +1,7 @@
 import { types, flow, getEnv, Instance, getSnapshot } from 'mobx-state-tree';
 import { IAPIService } from 'modules/api/APIService';
 import { GithubUserResponse, GithubReposResponse } from '../../../config/api/types';
+import { APIServiceError } from 'modules/api/errors';
 
 export const GithubRepo = types.model('GithubRepo', {
   id: types.identifierNumber,
@@ -21,19 +22,25 @@ export const GithubUserStore = types
   .model('GithubUserStore', {
     user: types.maybeNull(GithubUser),
     state: types.optional(
-      types.union(types.literal('initial'), types.literal('pending'), types.literal('success'), types.literal('error')),
+      types.union(
+        types.literal('initial'),
+        types.literal('pending'),
+        types.literal('success'),
+        types.literal('error'),
+        types.literal('notFound')
+      ),
       'initial'
     ),
     error: types.maybe(types.string),
+    lastSearchUsername: types.maybe(types.string),
   })
   .actions((self) => ({
     fetchUserWithRepos: flow(function* fetchUserWithRepos(username) {
       self.user = null;
+      self.lastSearchUsername = username;
       self.state = 'pending';
 
       const apiService: IAPIService = getEnv(self).apiService;
-
-      // TODO: Check if this should be username or name?
       const userResponsePromise = apiService.get<GithubUserResponse>(`/users/${username}`);
       const reposResponsePromise = apiService.get<GithubReposResponse>(`/users/${username}/repos`);
 
@@ -44,7 +51,7 @@ export const GithubUserStore = types
         ]);
         self.user = GithubUser.create({
           login: userResponse.login,
-          name: userResponse.name,
+          name: userResponse.name || '',
           bio: userResponse.bio,
           avatarUrl: userResponse.avatar_url,
           repos: reposResponse.map((repo) =>
@@ -58,8 +65,14 @@ export const GithubUserStore = types
         });
         self.state = 'success';
       } catch (error) {
-        self.state = 'error';
-        self.error = error.message;
+        if (error instanceof APIServiceError && error.response?.status === 404) {
+          self.state = 'notFound';
+          self.user = null;
+        } else {
+          self.state = 'error';
+          self.error = error.message;
+          self.user = null;
+        }
       }
     }),
   }))
@@ -82,3 +95,4 @@ export const GithubUserStore = types
   }));
 
 export interface IGithubUserStore extends Instance<typeof GithubUserStore> {}
+export interface IGithubUser extends Instance<typeof GithubUser> {}

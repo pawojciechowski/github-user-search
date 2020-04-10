@@ -1,6 +1,8 @@
+// TODO: Verify types
+
 export interface GithubUserResponse {
   login: string;
-  name: string;
+  name: string | null;
   bio: string | null;
   avatar_url: string;
 }
