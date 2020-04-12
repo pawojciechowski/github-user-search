@@ -1,7 +1,7 @@
 import { types, flow, getEnv, Instance, getSnapshot } from 'mobx-state-tree';
-import { IAPIService } from 'modules/api/APIService';
+import { IAPIService } from 'modules/api/types';
 import { GithubUserResponse, GithubReposResponse } from '../../../config/api/types';
-import { APIServiceError } from 'modules/api/errors';
+import { APIError } from 'modules/api/errors';
 
 export const GithubRepo = types.model('GithubRepo', {
   id: types.identifierNumber,
@@ -65,7 +65,7 @@ export const GithubUserStore = types
         });
         self.state = 'success';
       } catch (error) {
-        if (error instanceof APIServiceError && error.response?.status === 404) {
+        if (error instanceof APIError && error.response?.status === 404) {
           self.state = 'notFound';
           self.user = null;
         } else {

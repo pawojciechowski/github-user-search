@@ -1,19 +1,8 @@
-import { APIServiceError } from './errors';
-
-type URL = string;
-
-export interface IAPIService {
-  get<T>(url: URL, params?: { [key: string]: string }): Promise<T>;
-}
-
-interface APIServiceOptions {
-  headers?: Headers;
-  mockResponse?: { [key: string]: any };
-  logRequests?: boolean;
-}
+import { IAPIService, APIUrl, APIServiceOptions } from './types';
+import { request as requestFunction } from './request';
 
 class APIService implements IAPIService {
-  private headers?: Headers;
+  private headers?: { [key: string]: string };
   private baseUrl: string;
   private mockResponse?: { [key: string]: any };
   private logRequests: boolean;
@@ -25,7 +14,7 @@ class APIService implements IAPIService {
     this.logRequests = !!options?.logRequests;
   }
 
-  async get<T>(url: URL, params?: { [key: string]: string }): Promise<T> {
+  async get<T>(url: APIUrl, params?: { [key: string]: string }): Promise<T> {
     let qs = params ? Object.keys(params).reduce((acc, next) => `${acc}${next}=${params[next]}&`, '') : '';
     if (qs[qs.length - 1] === '&') qs = qs.slice(0, -1);
     qs = encodeURI(qs);
@@ -35,7 +24,8 @@ class APIService implements IAPIService {
     });
   }
 
-  private async request<T>(url: string, options: RequestInit): Promise<T> {
+  private request<T>(url: string, options: RequestInit): Promise<T> {
+    const uri = `${this.baseUrl.replace(/\/$/, '')}${url}`;
     if (this.headers) {
       if (options.headers) {
         options.headers = { ...this.headers, ...options.headers };
@@ -43,27 +33,11 @@ class APIService implements IAPIService {
         options.headers = this.headers;
       }
     }
-
-    if (!this.mockResponse) {
-      try {
-        const uri = `${this.baseUrl.replace(/\/$/, '')}${url}`;
-        if (this.logRequests) console.log(`${options.method}: ${uri}`);
-        const response: Response = await fetch(uri, options);
-        if (response.ok) {
-          return await response.json();
-        } else {
-          throw new APIServiceError(url, options, response);
-        }
-      } catch (err) {
-        if (err instanceof APIServiceError) {
-          throw err;
-        } else {
-          throw new APIServiceError(url, options, undefined, err);
-        }
-      }
-    } else {
-      return this.mockResponse as T;
-    }
+    return requestFunction<T>(uri, {
+      ...options,
+      mockResponse: this.mockResponse,
+      logRequests: this.logRequests,
+    });
   }
 }
 
