@@ -4,7 +4,7 @@ import Title from 'modules/themes/components/Title';
 import { Theme } from 'modules/themes/types';
 import { ListItem } from '../types';
 
-const ListContainer = styled.div`
+export const ListContainer = styled.div`
   ul {
     list-style: none;
     padding: 0;
@@ -29,10 +29,11 @@ const listItemStyles = css`
   color: ${({ theme }: { theme: Theme }) => `${theme.secondary}`};
 `;
 
-const ListItemContent = styled.div`
+export const ListItemContent = styled.div`
   ${listItemStyles}
 `;
-const ListItemContentHref = styled.a`
+
+export const ListItemContentHref = styled.a`
   ${listItemStyles}
   text-decoration: none;
 `;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text matches snapshot 1`] = `
+.c0 {
+  margin: 0;
+  padding-bottom: 1px;
+}
+
+<p
+  class="c0"
+/>
+`;

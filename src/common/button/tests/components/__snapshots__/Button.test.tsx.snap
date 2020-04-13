@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button matches snapshot 1`] = `
+.c0 {
+  font-size: test;
+  line-height: test;
+  font-weight: test;
+  -webkit-letter-spacing: test;
+  -moz-letter-spacing: test;
+  -ms-letter-spacing: test;
+  letter-spacing: test;
+  color: test;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 0.75px;
+  background: test;
+  color: test;
+  border-radius: 8px;
+  font-weight: bold;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: color 0.15s ease-in-out,background 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out,background 0.15s ease-in-out;
+}
+
+.c0[disabled] {
+  background: testDisabled;
+  color: testDisabled;
+}
+
+<button
+  class="c0"
+/>
+`;

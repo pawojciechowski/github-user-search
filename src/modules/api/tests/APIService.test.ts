@@ -11,10 +11,6 @@ const testMockResponse = { testMockResponse: 'testMockResponse' };
 jest.mock('../request');
 
 describe('APIService', () => {
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
   it('should allow to use get method for making requests via request function', async () => {
     const requestMock = request as jest.MockedFunction<typeof request>;
     requestMock.mockReturnValue(Promise.resolve(testData));

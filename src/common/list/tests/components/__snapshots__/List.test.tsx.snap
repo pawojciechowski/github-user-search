@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List matches snapshot 1`] = `
+.c1 {
+  font-size: test;
+  font-weight: test;
+  line-height: test;
+  -webkit-letter-spacing: test;
+  -moz-letter-spacing: test;
+  -ms-letter-spacing: test;
+  letter-spacing: test;
+  color: test;
+  margin-top: 0;
+  margin-bottom: 1px;
+  padding: 0;
+}
+
+.c0 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 li {
+  display: block;
+  margin-bottom: 1px;
+}
+
+.c2 {
+  display: block;
+  padding: 1px;
+  background: test;
+  box-shadow: test;
+  border-radius: 12px;
+  line-height: 16px;
+  color: test;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+<div
+  class="c0"
+>
+  <h2
+    class="c1"
+  >
+    testTitle
+  </h2>
+  <ul>
+    <li>
+      <a
+        class="c2"
+        href="http://localhost1"
+        rel="noopener nofollow noreferer"
+        target="_blank"
+      >
+        test1
+      </a>
+    </li>
+    <li>
+      <a
+        class="c2"
+        href="http://localhost2"
+        rel="noopener nofollow noreferer"
+        target="_blank"
+      >
+        test2
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`ListContainer matches snapshot 1`] = `
+.c0 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 li {
+  display: block;
+  margin-bottom: 1px;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`ListItemContent matches snapshot 1`] = `
+.c0 {
+  display: block;
+  padding: 1px;
+  background: test;
+  box-shadow: test;
+  border-radius: 12px;
+  line-height: 16px;
+  color: test;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`ListItemContentHref matches snapshot 1`] = `
+.c0 {
+  display: block;
+  padding: 1px;
+  background: test;
+  box-shadow: test;
+  border-radius: 12px;
+  line-height: 16px;
+  color: test;
+}
+
+<div
+  class="c0"
+/>
+`;

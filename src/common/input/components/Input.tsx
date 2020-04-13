@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 import { Theme } from 'modules/themes/types';
 import { baseFontCSS } from 'modules/themes/styles';
 
-// TODO: Check if those styles were removed while minification
 const BaseInput = styled.input`
   ${baseFontCSS}
   color: ${({ theme }: { theme: Theme }) => theme.input.text.color};

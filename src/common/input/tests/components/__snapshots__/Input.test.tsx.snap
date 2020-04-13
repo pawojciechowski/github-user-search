@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input matches snapshot 1`] = `
+.c1 {
+  font-size: test;
+  line-height: test;
+  font-weight: test;
+  -webkit-letter-spacing: test;
+  -moz-letter-spacing: test;
+  -ms-letter-spacing: test;
+  letter-spacing: test;
+  color: test;
+  color: test;
+  line-height: 16px;
+  padding: 0.625px 0.625px 0.625px 32px;
+  background: test;
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.c1::-webkit-input-placeholder {
+  color: test;
+}
+
+.c1::-moz-placeholder {
+  color: test;
+}
+
+.c1:-ms-input-placeholder {
+  color: test;
+}
+
+.c1::placeholder {
+  color: test;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0:before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  background-image: url(test);
+}
+
+<div
+  class="c0"
+>
+  <input
+    class="c1"
+  />
+</div>
+`;
