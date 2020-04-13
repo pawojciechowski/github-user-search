@@ -8,7 +8,6 @@ import List from 'common/list/components/List';
 import { Theme } from 'modules/themes/types';
 import { ListItem } from 'common/list/types';
 
-// TODO: Add skeleton
 const UserSearchResultContainer = styled.div``;
 const UserSearchResultHeader = styled.div`
   display: flex;

@@ -21,4 +21,5 @@ I have used [mobx-state-tree](https://mobx-state-tree.js.org/) as state manageme
 - [x] Add theming possibility
 - [x] Add state management library
 - [x] HMR for both components and state
+- [ ] Add skeletons
 - [ ] Add CI & CD and deploy it to the server
