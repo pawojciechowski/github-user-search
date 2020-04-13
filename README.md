@@ -1,6 +1,6 @@
 # Github user search
 
-<!-- ![AppScreen](/screen.jpg) -->
+![AppScreen](/screen.jpg)
 
 ## Short introduction
 
@@ -21,5 +21,5 @@ I have used [mobx-state-tree](https://mobx-state-tree.js.org/) as state manageme
 - [x] Add theming possibility
 - [x] Add state management library
 - [x] HMR for both components and state
+- [x] Add CI & CD and deploy it to the server
 - [ ] Add skeletons
-- [ ] Add CI & CD and deploy it to the server

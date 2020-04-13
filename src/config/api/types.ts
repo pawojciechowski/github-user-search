@@ -1,5 +1,3 @@
-// TODO: Verify types
-
 export interface GithubUserResponse {
   login: string;
   name: string | null;

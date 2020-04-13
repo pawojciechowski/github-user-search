@@ -1,0 +1,38 @@
+version: 2.1
+orbs:
+  node: circleci/node@2.0.1
+jobs:
+  build-and-test:
+    working_directory: ~/githubusersearch
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          app-dir: ~/githubusersearch
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - persist_to_workspace:
+          root: ~/githubusersearch
+          paths: build
+  deploy:
+    executor:
+      name: node/default
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - add_ssh_keys
+      - run: scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r /tmp/workspace/build $HOST_WITH_PATH
+workflows:
+  build-test-deploy:
+    jobs:
+      - build-and-test
+      - deploy:
+          requires:
+            - build-and-test
+          filters:
+            branches:
+              only:
+                - master

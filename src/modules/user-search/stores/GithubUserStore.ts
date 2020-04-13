@@ -1,7 +1,8 @@
 import { types, flow, getEnv, Instance, getSnapshot } from 'mobx-state-tree';
 import { IAPIService } from 'modules/api/types';
-import { GithubUserResponse, GithubReposResponse } from '../../../config/api/types';
 import { APIError } from 'modules/api/errors';
+
+import { GithubUserResponse, GithubReposResponse } from '../../../config/api/types';
 
 export const GithubRepo = types.model('GithubRepo', {
   id: types.identifierNumber,
@@ -18,7 +19,7 @@ export const GithubUser = types.model('GithubUser', {
   repos: types.array(GithubRepo),
 });
 
-export const GithubUserStore = types
+const GithubUserStore = types
   .model('GithubUserStore', {
     user: types.maybeNull(GithubUser),
     state: types.optional(
@@ -96,3 +97,5 @@ export const GithubUserStore = types
 
 export interface IGithubUserStore extends Instance<typeof GithubUserStore> {}
 export interface IGithubUser extends Instance<typeof GithubUser> {}
+
+export default GithubUserStore;
