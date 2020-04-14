@@ -1,0 +1,79 @@
+import React from 'react';
+import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
+import { render } from '@testing-library/react';
+import { Theme } from 'modules/themes/types';
+import StateProvider from 'config/state/components/StateProvider';
+import GithubUserStore from 'modules/user-search/stores/GithubUserStore';
+
+export const testTheme: Theme = {
+  spacer: 1,
+  foreground: 'test',
+  background: 'test',
+  secondary: 'test',
+  containerShadow: 'test',
+  typography: {
+    title: {
+      fontSize: 'test',
+      fontWeight: 'test',
+      lineHeight: 'test',
+      letterSpacing: 'test',
+      color: 'test',
+    },
+    base: {
+      fontFamily: 'test',
+      fontSize: 'test',
+      fontWeight: 'test',
+      lineHeight: 'test',
+      letterSpacing: 'test',
+      color: 'test',
+    },
+  },
+  input: {
+    background: 'test',
+    text: {
+      color: 'test',
+    },
+    placeholder: {
+      text: {
+        color: 'test',
+      },
+    },
+    icon: 'test',
+  },
+  button: {
+    background: 'test',
+    text: {
+      color: 'test',
+    },
+    disabled: {
+      background: 'testDisabled',
+      text: {
+        color: 'testDisabled',
+      },
+    },
+  },
+};
+
+export const renderWithThemeProvider = (element: React.ReactNode, theme?: Theme) => {
+  return render(<StyledComponentsThemeProvider theme={testTheme}>{element}</StyledComponentsThemeProvider>);
+};
+
+interface TestInitialState {
+  userStore?: any;
+}
+
+const getStores = (initialState: TestInitialState = {}) => {
+  return {
+    userStore: GithubUserStore.create({ ...initialState.userStore }),
+  };
+};
+
+export const renderWithStateAndTheme = (element: React.ReactNode, theme?: Theme, initialState?: TestInitialState) => {
+  const stores = getStores(initialState);
+
+  return render(
+    <StateProvider stores={stores}>
+      <StyledComponentsThemeProvider theme={testTheme}>{element}</StyledComponentsThemeProvider>
+    </StateProvider>
+  );
+};

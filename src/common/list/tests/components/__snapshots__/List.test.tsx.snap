@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List matches snapshot 1`] = `
+exports[`<List /> matches snapshot 1`] = `
 .c1 {
   font-size: test;
   font-weight: test;
@@ -78,7 +78,7 @@ exports[`List matches snapshot 1`] = `
 </div>
 `;
 
-exports[`ListContainer matches snapshot 1`] = `
+exports[`<ListContainer /> matches snapshot 1`] = `
 .c0 ul {
   list-style: none;
   padding: 0;
@@ -102,7 +102,7 @@ exports[`ListContainer matches snapshot 1`] = `
 />
 `;
 
-exports[`ListItemContent matches snapshot 1`] = `
+exports[`<ListItemContent /> matches snapshot 1`] = `
 .c0 {
   display: block;
   padding: 1px;
@@ -118,7 +118,7 @@ exports[`ListItemContent matches snapshot 1`] = `
 />
 `;
 
-exports[`ListItemContentHref matches snapshot 1`] = `
+exports[`<ListItemContentHref /> matches snapshot 1`] = `
 .c0 {
   display: block;
   padding: 1px;

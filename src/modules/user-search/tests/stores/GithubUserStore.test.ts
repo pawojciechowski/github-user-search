@@ -60,7 +60,7 @@ const testUserResponse = {
   avatar_url: 'test',
 } as GithubUserResponse;
 
-const apiServiceMock = {
+export const apiServiceMock = {
   get: jest.fn((url) => {
     if (url === `/users/${testUsername}`) {
       return Promise.resolve(testUserResponse);

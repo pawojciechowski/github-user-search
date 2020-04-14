@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button matches snapshot 1`] = `
+exports[`<Button /> matches snapshot 1`] = `
 .c0 {
+  font-family: test;
   font-size: test;
   line-height: test;
   font-weight: test;

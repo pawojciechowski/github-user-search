@@ -7,7 +7,7 @@ const testTheme = {
   spacer: 1,
 } as Theme;
 
-describe('Container', () => {
+describe('<Container />', () => {
   it('use proper padding based on spacer property in theme', () => {
     const { container } = render(<Container theme={testTheme} />);
     expect(container.firstChild).toHaveStyleRule('padding-left', '1.5px');

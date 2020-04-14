@@ -16,7 +16,7 @@ const testTheme = {
   spacer: 1,
 } as Theme;
 
-describe('Title', () => {
+describe('<Title />', () => {
   it('matches snapshot', () => {
     const { container } = render(<Title theme={testTheme} />);
     expect(container.firstChild).toMatchSnapshot();

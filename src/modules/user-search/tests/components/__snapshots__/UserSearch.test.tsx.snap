@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserSearch /> should match snapshot 1`] = `
+.c6 {
+  font-family: test;
+  font-size: test;
+  line-height: test;
+  font-weight: test;
+  -webkit-letter-spacing: test;
+  -moz-letter-spacing: test;
+  -ms-letter-spacing: test;
+  letter-spacing: test;
+  color: test;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 0.75px;
+  background: test;
+  color: test;
+  border-radius: 8px;
+  font-weight: bold;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: color 0.15s ease-in-out,background 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out,background 0.15s ease-in-out;
+}
+
+.c6[disabled] {
+  background: testDisabled;
+  color: testDisabled;
+}
+
+.c5 {
+  font-family: test;
+  font-size: test;
+  line-height: test;
+  font-weight: test;
+  -webkit-letter-spacing: test;
+  -moz-letter-spacing: test;
+  -ms-letter-spacing: test;
+  letter-spacing: test;
+  color: test;
+  color: test;
+  line-height: 16px;
+  padding: 0.625px 0.625px 0.625px 32px;
+  background: test;
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.c5::-webkit-input-placeholder {
+  color: test;
+}
+
+.c5::-moz-placeholder {
+  color: test;
+}
+
+.c5:-ms-input-placeholder {
+  color: test;
+}
+
+.c5::placeholder {
+  color: test;
+}
+
+.c4 {
+  position: relative;
+}
+
+.c4:before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  background-image: url(test);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 .c3 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-right: 1px;
+}
+
+.c8 {
+  font-size: test;
+  font-weight: test;
+  line-height: test;
+  -webkit-letter-spacing: test;
+  -moz-letter-spacing: test;
+  -ms-letter-spacing: test;
+  letter-spacing: test;
+  color: test;
+  margin-top: 0;
+  margin-bottom: 1px;
+  padding: 0;
+}
+
+.c9 {
+  margin: 0;
+  padding-bottom: 1px;
+}
+
+.c0 {
+  background: test;
+  box-shadow: test;
+}
+
+.c1 {
+  padding-left: 1.5px;
+  padding-right: 1.5px;
+  padding-top: 1.5px;
+  padding-bottom: 1.5px;
+}
+
+.c7 {
+  padding-left: 1.5px;
+  padding-right: 1.5px;
+  padding-top: 1.5px;
+  padding-bottom: 1.5px;
+}
+
+@media screen and (min-width:768px) {
+  .c1 {
+    max-width: 700px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c7 {
+    max-width: 700px;
+    margin: auto;
+  }
+}
+
+<div
+  class=""
+>
+  <div
+    class="c0"
+  >
+    <div
+      class="sc-fznyAO c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3 c4"
+        >
+          <input
+            class="c5"
+            placeholder="Search for users"
+            type="text"
+            value=""
+          />
+        </div>
+        <button
+          class="c6"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-fznyAO c7"
+  >
+    <div
+      class=""
+    >
+      <h2
+        class="c8"
+      >
+        Let's find a Github user!
+      </h2>
+      <p
+        class="c9"
+      >
+        Start with typing the username in the search box :)
+      </p>
+    </div>
+  </div>
+</div>
+`;

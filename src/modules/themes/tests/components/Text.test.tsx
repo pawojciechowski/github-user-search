@@ -7,7 +7,7 @@ const testTheme = {
   spacer: 1,
 } as Theme;
 
-describe('Text', () => {
+describe('<Text />', () => {
   it('matches snapshot', () => {
     const { container } = render(<Text theme={testTheme} />);
     expect(container.firstChild).toMatchSnapshot();

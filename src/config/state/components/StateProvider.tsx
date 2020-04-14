@@ -1,22 +1,13 @@
 import React, { PropsWithChildren } from 'react';
 import { Provider } from 'mobx-react';
-import GithubUserStore from 'modules/user-search/stores/GithubUserStore';
-import { githubApiService } from 'config/api/services';
-import { applySnapshot, getSnapshot } from 'mobx-state-tree';
+import { default as appStores, AppStores } from '../appStores';
 
-const userStore = GithubUserStore.create({}, { apiService: githubApiService });
-
-export function StateProvider({ children }: PropsWithChildren<{}>) {
-  return <Provider userStore={userStore}>{children}</Provider>;
+interface StateProviderProps {
+  stores?: AppStores;
 }
 
-if (module.hot) {
-  if (module.hot.data && module.hot.data.store) {
-    applySnapshot(userStore, module.hot.data.store);
-  }
-  module.hot.dispose((data) => {
-    data.store = getSnapshot(userStore);
-  });
+export function StateProvider({ children, stores = appStores }: PropsWithChildren<StateProviderProps>) {
+  return <Provider {...stores}>{children}</Provider>;
 }
 
 export default StateProvider;

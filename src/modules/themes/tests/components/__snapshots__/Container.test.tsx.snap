@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Container matches snapshot 1`] = `
+exports[`<Container /> matches snapshot 1`] = `
 .c0 {
   padding-left: 1.5px;
   padding-right: 1.5px;

@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBar /> should match snapshot 1`] = `
+.c4 {
+  font-family: test;
+  font-size: test;
+  line-height: test;
+  font-weight: test;
+  -webkit-letter-spacing: test;
+  -moz-letter-spacing: test;
+  -ms-letter-spacing: test;
+  letter-spacing: test;
+  color: test;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 0.75px;
+  background: test;
+  color: test;
+  border-radius: 8px;
+  font-weight: bold;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: color 0.15s ease-in-out,background 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out,background 0.15s ease-in-out;
+}
+
+.c4[disabled] {
+  background: testDisabled;
+  color: testDisabled;
+}
+
+.c3 {
+  font-family: test;
+  font-size: test;
+  line-height: test;
+  font-weight: test;
+  -webkit-letter-spacing: test;
+  -moz-letter-spacing: test;
+  -ms-letter-spacing: test;
+  letter-spacing: test;
+  color: test;
+  color: test;
+  line-height: 16px;
+  padding: 0.625px 0.625px 0.625px 32px;
+  background: test;
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.c3::-webkit-input-placeholder {
+  color: test;
+}
+
+.c3::-moz-placeholder {
+  color: test;
+}
+
+.c3:-ms-input-placeholder {
+  color: test;
+}
+
+.c3::placeholder {
+  color: test;
+}
+
+.c2 {
+  position: relative;
+}
+
+.c2:before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  background-image: url(test);
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .c1 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-right: 1px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 c2"
+  >
+    <input
+      class="c3"
+      placeholder="Search for users"
+      type="text"
+      value=""
+    />
+  </div>
+  <button
+    class="c4"
+  >
+    Search
+  </button>
+</div>
+`;

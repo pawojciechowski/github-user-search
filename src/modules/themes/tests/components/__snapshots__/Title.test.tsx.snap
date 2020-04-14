@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Title matches snapshot 1`] = `
+exports[`<Title /> matches snapshot 1`] = `
 .c0 {
   font-size: test;
   font-weight: test;

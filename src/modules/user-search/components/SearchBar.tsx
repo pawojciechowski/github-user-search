@@ -16,7 +16,7 @@ const SearchBarContainer = styled.div`
 `;
 
 const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>, userStore: IGithubUserStore) => {
-  if (e.key === 'Enter') {
+  if (e.key === 'Enter' && !e.currentTarget.disabled) {
     userStore.fetchUserWithRepos(e.currentTarget.value);
   }
 };
@@ -34,6 +34,7 @@ interface SearchBarProps {
 
 export function SearchBar({ userStore }: SearchBarProps) {
   const [value, setInputValue] = useState('');
+
   return (
     <SearchBarContainer>
       <Input
@@ -42,6 +43,7 @@ export function SearchBar({ userStore }: SearchBarProps) {
         onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e, setInputValue)}
         onKeyPress={(e: React.KeyboardEvent<HTMLInputElement>) => handleKeyPress(e, userStore)}
         placeholder="Search for users"
+        disabled={userStore.isLoading}
       />
       <Button disabled={userStore.isLoading} onClick={() => userStore.fetchUserWithRepos(value)}>
         Search
