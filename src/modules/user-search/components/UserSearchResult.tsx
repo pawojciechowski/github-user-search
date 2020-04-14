@@ -47,7 +47,7 @@ const renderContent = (userStore: IGithubUserStore, listItems: ListItem[], user:
         </>
       );
     case 'error':
-      return 'There was an error while searching the user :(';
+      return <Title as="h2">There was an error while searching the user :(</Title>;
     default:
       return (
         <>
