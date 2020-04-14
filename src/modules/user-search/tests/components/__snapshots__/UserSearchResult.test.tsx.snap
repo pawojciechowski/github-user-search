@@ -62,6 +62,169 @@ exports[`<UserSearchResult /> should match snapshot when in initial state 1`] = 
 </div>
 `;
 
+exports[`<UserSearchResult /> should match snapshot when in loading state 1`] = `
+.c3 {
+  font-size: test;
+  font-weight: test;
+  line-height: test;
+  -webkit-letter-spacing: test;
+  -moz-letter-spacing: test;
+  -ms-letter-spacing: test;
+  letter-spacing: test;
+  color: test;
+  margin-top: 0;
+  margin-bottom: 1px;
+  padding: 0;
+}
+
+.c5 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 li {
+  display: block;
+  margin-bottom: 1px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  margin-bottom: 1px;
+}
+
+.c0 .c2 {
+  margin-bottom: 0;
+}
+
+.c1 {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-right: 1px;
+}
+
+.c4 {
+  margin: 0;
+  padding-bottom: 1px;
+  margin-bottom: 1px;
+}
+
+<div
+  class=""
+>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <span>
+        <span
+          class="react-loading-skeleton css-1x45xix-skeletonStyles-Skeleton"
+          style="height: 100%;"
+        >
+          ‌
+        </span>
+      </span>
+    </div>
+    <h1
+      class="c2 c3"
+    >
+      <span>
+        <span
+          class="react-loading-skeleton css-1x45xix-skeletonStyles-Skeleton"
+          style="width: 70px;"
+        >
+          ‌
+        </span>
+      </span>
+      <br />
+      <span>
+        <span
+          class="react-loading-skeleton css-1x45xix-skeletonStyles-Skeleton"
+          style="width: 120px;"
+        >
+          ‌
+        </span>
+      </span>
+    </h1>
+  </div>
+  <p
+    class="sc-AxirZ c4"
+  >
+    <span>
+      <span
+        class="react-loading-skeleton css-1x45xix-skeletonStyles-Skeleton"
+      >
+        ‌
+      </span>
+      <span
+        class="react-loading-skeleton css-1x45xix-skeletonStyles-Skeleton"
+      >
+        ‌
+      </span>
+    </span>
+  </p>
+  <div
+    class="c5"
+  >
+    <h2
+      class="c2 c3"
+    >
+      Top repositories
+    </h2>
+    <ul>
+      <li>
+        <span>
+          <span
+            class="react-loading-skeleton css-1x45xix-skeletonStyles-Skeleton"
+            style="height: 48px;"
+          >
+            ‌
+          </span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <span
+            class="react-loading-skeleton css-1x45xix-skeletonStyles-Skeleton"
+            style="height: 48px;"
+          >
+            ‌
+          </span>
+        </span>
+      </li>
+      <li>
+        <span>
+          <span
+            class="react-loading-skeleton css-1x45xix-skeletonStyles-Skeleton"
+            style="height: 48px;"
+          >
+            ‌
+          </span>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
 exports[`<UserSearchResult /> should match snapshot when in notFound state 1`] = `
 .c0 {
   font-size: test;

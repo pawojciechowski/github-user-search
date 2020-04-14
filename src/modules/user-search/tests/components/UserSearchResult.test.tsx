@@ -54,4 +54,13 @@ describe('<UserSearchResult />', () => {
     const { container } = renderWithThemeProvider(<UserSearchResult userStore={userStore} />);
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  it('should match snapshot when in loading state', () => {
+    const userStore = ({
+      isLoading: true,
+    } as unknown) as IGithubUserStore;
+
+    const { container } = renderWithThemeProvider(<UserSearchResult userStore={userStore} />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

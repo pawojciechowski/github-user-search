@@ -7,6 +7,7 @@ import Text from 'modules/themes/components/Text';
 import List from 'common/list/components/List';
 import { Theme } from 'modules/themes/types';
 import { ListItem } from 'common/list/types';
+import Skeleton from 'react-loading-skeleton';
 
 const UserSearchResultContainer = styled.div``;
 const UserSearchResultHeader = styled.div`
@@ -53,10 +54,15 @@ const renderContent = (userStore: IGithubUserStore, listItems: ListItem[], user:
         <>
           <UserSearchResultHeader>
             <UserSearchResultAvatarContainer>
-              {user && <img src={user.avatarUrl} alt="Avatar url" />}
+              {!userStore.isLoading ? (
+                user && <img src={user.avatarUrl} alt="Avatar url" />
+              ) : (
+                <Skeleton height="100%" />
+              )}
             </UserSearchResultAvatarContainer>
             <Title>
-              {user &&
+              {!userStore.isLoading ? (
+                user &&
                 user.name.split(' ').map((word, i) => {
                   return (
                     <React.Fragment key={i}>
@@ -64,11 +70,18 @@ const renderContent = (userStore: IGithubUserStore, listItems: ListItem[], user:
                       <br />
                     </React.Fragment>
                   );
-                })}
+                })
+              ) : (
+                <>
+                  <Skeleton width={70} />
+                  <br />
+                  <Skeleton width={120} />
+                </>
+              )}
             </Title>
           </UserSearchResultHeader>
-          <UserSearchResultBio>{user && user.bio}</UserSearchResultBio>
-          <List title="Top repositories" items={listItems} />
+          <UserSearchResultBio>{!userStore.isLoading ? user && user.bio : <Skeleton count={2} />}</UserSearchResultBio>
+          <List title="Top repositories" items={listItems} loading={userStore.isLoading} />
         </>
       );
   }

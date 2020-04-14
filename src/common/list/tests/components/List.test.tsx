@@ -79,4 +79,9 @@ describe('<List />', () => {
     const { container } = renderWithThemeProvider(<List items={testItemsWithHrefs} title={testTitle} />);
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  it('matches snapshot when loading true', () => {
+    const { container } = renderWithThemeProvider(<List items={testItemsWithHrefs} title={testTitle} loading={true} />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

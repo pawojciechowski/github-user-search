@@ -17,7 +17,7 @@ You can try it [here](https://githubusersearch.pawojciechowski.ovh/).
 - [x] Use code formatter (prettier)
 - [x] Connect to Github REST API v3
 - [x] Implement designs
-- [ ] Write tests
+- [x] Write tests
 
 ## Additional features
 
@@ -25,4 +25,4 @@ You can try it [here](https://githubusersearch.pawojciechowski.ovh/).
 - [x] Add state management library
 - [x] HMR for both components and state
 - [x] Add CI & CD and deploy it to the server
-- [ ] Add skeletons
+- [x] Add skeletons

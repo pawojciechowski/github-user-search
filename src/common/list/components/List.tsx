@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import Title from 'modules/themes/components/Title';
 import { Theme } from 'modules/themes/types';
 import { ListItem } from '../types';
+import Skeleton from 'react-loading-skeleton';
 
 export const ListContainer = styled.div`
   ul {
@@ -41,26 +42,35 @@ export const ListItemContentHref = styled.a`
 interface ListProps {
   title: string;
   items: ListItem[];
+  loading?: boolean;
 }
 
-export function List({ title, items }: ListProps) {
+export function List({ title, items, loading }: ListProps) {
   return (
     <ListContainer>
       <Title as="h2">{title}</Title>
       <ul>
-        {items.map((item) => {
-          return (
-            <li key={item.id}>
-              {item.href ? (
-                <ListItemContentHref rel="noopener nofollow noreferer" target="_blank" href={item.href}>
-                  {item.text}
-                </ListItemContentHref>
-              ) : (
-                <ListItemContent>{item.text}</ListItemContent>
-              )}
-            </li>
-          );
-        })}
+        {!loading
+          ? items.map((item) => {
+              return (
+                <li key={item.id}>
+                  {item.href ? (
+                    <ListItemContentHref rel="noopener nofollow noreferer" target="_blank" href={item.href}>
+                      {item.text}
+                    </ListItemContentHref>
+                  ) : (
+                    <ListItemContent>{item.text}</ListItemContent>
+                  )}
+                </li>
+              );
+            })
+          : [...(Array(3).keys() as any)].map((i) => {
+              return (
+                <li key={i}>
+                  <Skeleton height={48} />
+                </li>
+              );
+            })}
       </ul>
     </ListContainer>
   );

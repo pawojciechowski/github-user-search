@@ -78,6 +78,82 @@ exports[`<List /> matches snapshot 1`] = `
 </div>
 `;
 
+exports[`<List /> matches snapshot when loading true 1`] = `
+.c1 {
+  font-size: test;
+  font-weight: test;
+  line-height: test;
+  -webkit-letter-spacing: test;
+  -moz-letter-spacing: test;
+  -ms-letter-spacing: test;
+  letter-spacing: test;
+  color: test;
+  margin-top: 0;
+  margin-bottom: 1px;
+  padding: 0;
+}
+
+.c0 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 li {
+  display: block;
+  margin-bottom: 1px;
+}
+
+<div
+  class="c0"
+>
+  <h2
+    class="c1"
+  >
+    testTitle
+  </h2>
+  <ul>
+    <li>
+      <span>
+        <span
+          class="react-loading-skeleton css-1x45xix-skeletonStyles-Skeleton"
+          style="height: 48px;"
+        >
+          ‌
+        </span>
+      </span>
+    </li>
+    <li>
+      <span>
+        <span
+          class="react-loading-skeleton css-1x45xix-skeletonStyles-Skeleton"
+          style="height: 48px;"
+        >
+          ‌
+        </span>
+      </span>
+    </li>
+    <li>
+      <span>
+        <span
+          class="react-loading-skeleton css-1x45xix-skeletonStyles-Skeleton"
+          style="height: 48px;"
+        >
+          ‌
+        </span>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`<ListContainer /> matches snapshot 1`] = `
 .c0 ul {
   list-style: none;
