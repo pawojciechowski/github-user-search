@@ -1,8 +1,7 @@
 import { types, flow, getEnv, Instance, getSnapshot } from 'mobx-state-tree';
+import { GithubUserResponse, GithubReposResponse } from 'config/api/types';
 import { IAPIService } from 'modules/api/types';
 import { APIError } from 'modules/api/errors';
-
-import { GithubUserResponse, GithubReposResponse } from '../../../config/api/types';
 
 export const GithubRepo = types.model('GithubRepo', {
   id: types.identifierNumber,

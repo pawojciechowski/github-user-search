@@ -2,8 +2,8 @@ import React from 'react';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 import { render } from '@testing-library/react';
 import { Theme } from 'modules/themes/types';
-import StateProvider from 'config/state/components/StateProvider';
 import GithubUserStore from 'modules/user-search/stores/GithubUserStore';
+import { Provider } from 'mobx-react';
 
 export const testTheme: Theme = {
   spacer: 1,
@@ -62,18 +62,18 @@ interface TestInitialState {
   userStore?: any;
 }
 
-const getStores = (initialState: TestInitialState = {}) => {
+export const getTestStores = (initialState: TestInitialState = {}) => {
   return {
     userStore: GithubUserStore.create({ ...initialState.userStore }),
   };
 };
 
 export const renderWithStateAndTheme = (element: React.ReactNode, theme?: Theme, initialState?: TestInitialState) => {
-  const stores = getStores(initialState);
+  const stores = getTestStores(initialState);
 
   return render(
-    <StateProvider stores={stores}>
+    <Provider {...stores}>
       <StyledComponentsThemeProvider theme={testTheme}>{element}</StyledComponentsThemeProvider>
-    </StateProvider>
+    </Provider>
   );
 };

@@ -32,5 +32,7 @@ exports[`<Button /> matches snapshot 1`] = `
 
 <button
   class="c0"
-/>
+>
+  Test text
+</button>
 `;

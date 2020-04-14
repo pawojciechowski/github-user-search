@@ -5,7 +5,7 @@ import { Theme } from 'modules/themes/types';
 import { ListItem } from '../types';
 import Skeleton from 'react-loading-skeleton';
 
-export const ListContainer = styled.div`
+const ListContainer = styled.div`
   ul {
     list-style: none;
     padding: 0;
@@ -30,11 +30,11 @@ const listItemStyles = css`
   color: ${({ theme }: { theme: Theme }) => `${theme.secondary}`};
 `;
 
-export const ListItemContent = styled.div`
+const ListItemContent = styled.div`
   ${listItemStyles}
 `;
 
-export const ListItemContentHref = styled.a`
+const ListItemContentHref = styled.a`
   ${listItemStyles}
   text-decoration: none;
 `;

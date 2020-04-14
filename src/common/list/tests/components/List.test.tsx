@@ -1,8 +1,7 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import List, { ListContainer, ListItemContent } from '../../components/List';
+import List from '../../components/List';
 import { ListItem } from 'common/list/types';
-import { renderWithThemeProvider, testTheme } from 'config/tests/utils';
+import { renderWithThemeProvider } from 'config/tests/utils';
 
 const testItemsWithHrefs: ListItem[] = [
   {
@@ -29,27 +28,6 @@ const testItemsWithoutHrefs: ListItem[] = [
 ];
 
 const testTitle = 'testTitle';
-
-describe('<ListContainer />', () => {
-  it('matches snapshot', () => {
-    const { container } = render(<ListContainer theme={testTheme} />);
-    expect(container.firstChild).toMatchSnapshot();
-  });
-});
-
-describe('<ListItemContent />', () => {
-  it('matches snapshot', () => {
-    const { container } = render(<ListItemContent theme={testTheme} />);
-    expect(container.firstChild).toMatchSnapshot();
-  });
-});
-
-describe('<ListItemContentHref />', () => {
-  it('matches snapshot', () => {
-    const { container } = render(<ListItemContent theme={testTheme} />);
-    expect(container.firstChild).toMatchSnapshot();
-  });
-});
 
 describe('<List />', () => {
   it('renders proper number of items', () => {
